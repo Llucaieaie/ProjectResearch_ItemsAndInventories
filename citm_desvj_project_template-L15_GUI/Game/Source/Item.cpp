@@ -21,7 +21,7 @@ bool Item::Awake() {
 	position.x = parameters.attribute("x").as_int();
 	position.y = parameters.attribute("y").as_int();
 	texturePath = parameters.attribute("texturepath").as_string();
-
+	
 	return true;
 }
 

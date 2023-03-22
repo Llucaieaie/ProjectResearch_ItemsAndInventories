@@ -62,18 +62,18 @@ bool Player::Update()
 
 	//L02: DONE 4: modify the position of the player using arrow keys and render the texture
 	if (app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
-		vel = b2Vec2(0, -speed);
+		vel = b2Vec2(vel.x, -speed);
 	}
 	if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
-		vel = b2Vec2(0, speed);
+		vel = b2Vec2(vel.x, speed);
 	}
 		
 	if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-		vel = b2Vec2(-speed, 0);
+		vel = b2Vec2(-speed, vel.y);
 	}
 
 	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
-		vel = b2Vec2(speed, 0);
+		vel = b2Vec2(speed, vel.y);
 	}
 
 	//Set the velocity of the pbody of the player
