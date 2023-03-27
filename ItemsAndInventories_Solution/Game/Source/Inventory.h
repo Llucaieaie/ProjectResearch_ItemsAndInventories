@@ -19,6 +19,7 @@ public:
 	bool PreUpdate();
 	bool CleanUp();
 
+	// TODO 2: Create functions to add and remove items from the inventory
 	void addItem(Item& item);
 	void removeItem();
 
@@ -27,10 +28,11 @@ public:
 	const char* texturePath;
 	SDL_Rect rect;
 
+	// TODO 3: Create a bool to check if inventory is being shown
 	bool inventoryOn = false;
 
+	// TODO 1: Create the array Item class, and the variables for the capacity and the number of items contained
 	Item** items;
-	//capacity and number of items
 	unsigned cap;
 	unsigned nrOfItems;
 

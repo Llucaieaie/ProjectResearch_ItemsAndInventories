@@ -50,12 +50,12 @@ bool Item::Update()
 	position.x = METERS_TO_PIXELS(pbody->body->GetTransform().p.x) - 16;
 	position.y = METERS_TO_PIXELS(pbody->body->GetTransform().p.y) - 16;
 
-	// TODO Draw the items only if they have not been picked
+	// TODO 3: Some interface for the inventory
 	if (!isPicked)
 		app->render->DrawTexture(texture, position.x, position.y);
 
 
-	// TODO : Show the items on the inventory
+	//	TODO 4: Show the items' sprites in the inventory
 	if (app->inventory->inventoryOn)
 	{
 		rect = { 150, 100, 1280 - 300, 720 - 200 };
@@ -74,7 +74,7 @@ bool Item::CleanUp()
 	return true;
 }
 
-// TODO Add item to the inventory when picked
+// TODO 4: Add item to the inventory when picked
 void Item::OnCollision(PhysBody* physA, PhysBody* physB)
 {
 	// Detect the collision with the player
