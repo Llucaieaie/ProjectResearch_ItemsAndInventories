@@ -50,16 +50,17 @@ bool Item::Update()
 	position.x = METERS_TO_PIXELS(pbody->body->GetTransform().p.x) - 16;
 	position.y = METERS_TO_PIXELS(pbody->body->GetTransform().p.y) - 16;
 
-	// TODO 3: Some interface for the inventory
+	// Show items only when not picked
 	if (!isPicked)
 		app->render->DrawTexture(texture, position.x, position.y);
 
-
-	//	TODO 4: Show the items' sprites in the inventory
+	// TODO 3: Some interface for the inventory
 	if (app->inventory->inventoryOn)
 	{
 		rect = { 150, 100, 1280 - 300, 720 - 200 };
 		app->render->DrawRectangle(rect, 0, 0, 0, 50);
+
+		//	TODO 4: Show the items' sprites in the inventory
 		for (int i = 0; i < app->inventory->nrOfItems; i++)
 		{
 			app->render->DrawTexture(texture, 182 + 32 * i, 132);
